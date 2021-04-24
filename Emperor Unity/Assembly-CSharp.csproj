@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Menu Scripts\menuScripts.cs" />
+     <Compile Include="Assets\Menu Scripts\usernameScript.cs" />
      <Compile Include="Assets\SFX\SFXPlay.cs" />
      <Compile Include="Assets\Scripts\Emperor.cs" />
      <Compile Include="Assets\Scripts\Selectable.cs" />

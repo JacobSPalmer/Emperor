@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UpdateSprite : MonoBehaviour
 {
+    public bool winState = false;
     public Sprite cardFace;
     public Sprite cardBack;
     private SpriteRenderer spriteRenderer;
@@ -13,7 +14,13 @@ public class UpdateSprite : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<string> deck = Emperor.GenerateStdDeck();
+        List<string> deck;
+        if(winState == false){
+            deck = Emperor.GenerateStdDeck();
+        }
+        else{
+            deck = Emperor.GenerateWinDeck();
+        }
         emperor = FindObjectOfType<Emperor>();
         userInput = FindObjectOfType<UserInput>();
 

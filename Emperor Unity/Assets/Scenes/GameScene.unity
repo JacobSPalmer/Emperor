@@ -3167,6 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb065092dab51845b1d6b6f645a63dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinState: 0
   cardFaces:
   - {fileID: 21300000, guid: 9ea79b0624911fa4a862b55c47cbb82b, type: 3}
   - {fileID: 21300000, guid: 9ea79b0624911fa4a862b55c47cbb82b, type: 3}

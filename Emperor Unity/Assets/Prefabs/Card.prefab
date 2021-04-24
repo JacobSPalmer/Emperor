@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9cc8579baf782c47b7690d58560e10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winState: 0
   cardFace: {fileID: 0}
   cardBack: {fileID: 21300000, guid: 5a5d7519a725699448cdef79d441cc50, type: 3}
 --- !u!114 &5322245965452788733

@@ -208,6 +208,10 @@ public class UserInput : MonoBehaviour
             emperor.topPos[origin.posRow].GetComponent<Selectable>().suit = origin.suit;
             emperor.topPos[origin.posRow].GetComponent<Selectable>().rank = origin.rank;
             origin.onFoundation = true;
+            // foreach(GameObject foundation in emperor.topPos){
+            //     print(foundation.transform.name + ":" + foundation.transform.childCount);
+            // }
+            print(isCompleteFoundation());
         }
         else
         {
@@ -240,5 +244,19 @@ public class UserInput : MonoBehaviour
 
     }
 
-    // bool CheckWinState(){}
+    bool isCompleteFoundation(){
+        bool isComplete = true;
+        foreach(GameObject foundation in emperor.topPos){
+           if(foundation.transform.childCount == 13)
+           {
+               continue;
+           }
+           else
+           {
+              isComplete = false;
+              break;
+           }
+        }
+        return isComplete;
+    }
 }

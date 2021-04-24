@@ -9,6 +9,8 @@ public class SFXPlay : MonoBehaviour
 
     public AudioSource StartingGame;
 
+    public AudioSource BabyModeStart;
+
     public void PlayButtonClick() {
         ButtonClick.Play();
     }
@@ -19,5 +21,9 @@ public class SFXPlay : MonoBehaviour
 
     public void PlayStartingGameClick() {
         StartingGame.Play();
+    }
+
+    public void PlayBabyModeStart() {
+        BabyModeStart.Play();
     }
 }

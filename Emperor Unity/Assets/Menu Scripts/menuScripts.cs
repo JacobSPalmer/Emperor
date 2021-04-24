@@ -18,16 +18,19 @@ public class menuScripts : MonoBehaviour
         
     }
 
-    public string username;
-    public GameObject usernameInput;
-    public GameObject usernameOutput;
+    // public string username;
+    // public GameObject usernameInput;
+    // public GameObject usernameOutput;
 
-    public void StoreUsername()
-    {
-   	username = usernameInput.GetComponent<Text>().text;
-    usernameOutput.GetComponent<Text>().text = "Username: " + username;
+    // public void StoreUsername()
+    // {
+    //     // usernameInput = GameObject.Find("UsernameInput");
+    //     InputField input = usernameInput.GetComponent<InputField>();
+    //     username = input.text;
+    //     print(username);
+    //     // usernameOutput.GetComponent<Text>().text = "Username: " + username;
 
-    }
+    // }
 
     
     public void RulesClick (string LevelName) 
@@ -38,6 +41,10 @@ public class menuScripts : MonoBehaviour
 
     public void PlayClick (string LevelName) 
     {
+        // if(usernameInput.GetComponent<Text>().text == ""){
+        //     username = "Player";
+        // }
+        // PlayerPrefs.SetString("username", username);
         SceneManager.LoadScene("LoginScene", LoadSceneMode.Single);
     }
 
@@ -54,6 +61,11 @@ public class menuScripts : MonoBehaviour
     public void Gameplay (string LevelName)
     {
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+    }
+
+    public void WinStateGame (string LevelName)
+    {
+        SceneManager.LoadScene("WinGameScene", LoadSceneMode.Single);
     }
 
 }

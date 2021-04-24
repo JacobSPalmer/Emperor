@@ -5,6 +5,8 @@ using System.Linq;
 
 public class Emperor : MonoBehaviour
 {
+    public string playerName;
+    public bool WinState = false;
     public Sprite[] cardFaces;
     public GameObject cardPrefab;
 
@@ -13,10 +15,9 @@ public class Emperor : MonoBehaviour
     public GameObject[] bottomPos;
     public GameObject[] topPos;
 
-    
 
     public static string[] deckN = new string[] {"1", "2"};
-    public static string[] suits = new string[] {"C","D","H","S"};
+    public static string[] suits = new string[] {"C","D","H","S"}; //{"S","C","H","D"}
     public static string[] values = new string[] { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
     
     public List<string>[] tableaus;
@@ -37,11 +38,24 @@ public class Emperor : MonoBehaviour
 
     public List<string> deck;
 
+    void onEnable()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        playerName = PlayerPrefs.GetString("username");
+        print("Player: " + playerName);
         tableaus = new List<string>[] {tableau0,tableau1,tableau2,tableau3,tableau4,tableau5,tableau6,tableau7,tableau8,tableau9};
-        Play();
+        if(WinState == false){
+            Play();
+        }
+        else{
+            PlayWinState();
+        }
+        // PlayWinState();
 
     }
 
@@ -64,7 +78,25 @@ public class Emperor : MonoBehaviour
         
         //test functionality: prints all cards generated to unity activity console
         foreach(string card in deck){
-            print(card);
+            print(deck.IndexOf(card) + ":" + card);
+        }
+
+        //4 cards are put into each tableau list
+        EmperorSort();
+
+        //cards are instantiated and the tableau cards are properly flipped up at the top
+        StartCoroutine(EmperorDeal());
+        print(deck.Count);
+    }
+
+    public void PlayWinState()
+    {
+        //104 cards are generated
+        deck = GenerateWinDeck();
+        
+        //test functionality: prints all cards generated to unity activity console
+        foreach(string card in deck){
+            print(deck.IndexOf(card) + ":" + card);
         }
 
         //4 cards are put into each tableau list
@@ -82,6 +114,22 @@ public class Emperor : MonoBehaviour
         foreach(string s in suits)
         {
             foreach(string v in values)
+            {
+                foreach(string dn in deckN)
+                {
+                    newDeck.Add(dn + s + v);
+                }
+            }
+        }
+        return newDeck;
+    }
+
+    public static List<string> GenerateWinDeck()
+    {
+        List<string> newDeck = new List<string>();
+        foreach(string v in values.Reverse())
+        {
+            foreach(string s in suits)
             {
                 foreach(string dn in deckN)
                 {
@@ -162,4 +210,15 @@ public class Emperor : MonoBehaviour
             }
         }
     }
+
+    public void getFoundations(){
+        foreach(GameObject foundation in topPos){
+            print(foundation.transform.name + ":" + foundation.transform.childCount);
+        }
+    }
+
+    void onDisable(){
+    
+    }
+
 }
