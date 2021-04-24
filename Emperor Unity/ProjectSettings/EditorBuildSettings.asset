@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LoginScene.unity
     guid: 623cb7cd9be83e84f820608cf84466cd
   - enabled: 1
-    path: Assets/Scenes/RulesScene.unity
+    path: Assets/Scenes/RulesScene(Outdated).unity
     guid: 0ffbcdd693d99c640975fd0c9c166aaa
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
