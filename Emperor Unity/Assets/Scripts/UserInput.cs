@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class UserInput : MonoBehaviour
 {
-
+    public Text scorePanelObj;
+    public int foundationPoints;
     private Emperor emperor;
     public GameObject selectedCard;
 
     // Start is called before the first frame update
     void Start()
     {
+        foundationPoints = 0;
         emperor = FindObjectOfType<Emperor>();
         selectedCard = this.gameObject;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        updateScore();
         GetMouseClick();
     }
 
@@ -168,7 +171,7 @@ public class UserInput : MonoBehaviour
         float yOffset = 0.3f;
 
         //if the card is on the foundation or the card is a king, do not offset the card from the position object
-        if(destination.onFoundation || (!destination.onFoundation && origin.rank == 13))
+        if(destination.onFoundation || (!destination.onFoundation && (emperor.bottomPos[destination.posRow].transform.childCount == 0)))
         {
             yOffset = 0;
         }
@@ -193,6 +196,7 @@ public class UserInput : MonoBehaviour
         else if(origin.onFoundation)
         {
             emperor.topPos[origin.posRow].GetComponent<Selectable>().rank = origin.rank - 1;
+            determineFoundationPoint();
         }
         else
         {
@@ -211,15 +215,16 @@ public class UserInput : MonoBehaviour
             // foreach(GameObject foundation in emperor.topPos){
             //     print(foundation.transform.name + ":" + foundation.transform.childCount);
             // }
-            print(isCompleteFoundation());
+            determineFoundationPoint();
+            // print(isCompleteFoundation());
         }
         else
         {
             origin.onFoundation = false;
         }
 
+        
         selectedCard = this.gameObject;
-
     }
 
     bool Buried(GameObject obj)
@@ -258,5 +263,30 @@ public class UserInput : MonoBehaviour
            }
         }
         return isComplete;
+    }
+
+    private void determineFoundationPoint()
+    {
+        int score = 0;
+        foreach(GameObject foundation in emperor.topPos)
+        {
+            int n = foundation.transform.childCount;
+            print(n);
+            for(int i = 1; i <= n; i++)
+            {
+                score += i * 10;
+            }
+        }
+        foundationPoints = score;
+    }
+
+    private void updateScore()
+    {
+        scorePanelObj.text = foundationPoints.ToString();
+    }
+
+    void onDisable()
+    {
+        PlayerPrefs.SetInt("score", foundationPoints);
     }
 }

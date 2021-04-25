@@ -218,7 +218,14 @@ public class Emperor : MonoBehaviour
     }
 
     void onDisable(){
-    
+        if(WinState == false){
+            PlayerPrefs.SetInt("validScore", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("validScore", 0);
+        }
+        
     }
 
 }
