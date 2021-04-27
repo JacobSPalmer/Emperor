@@ -9,15 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: d8e10c8ed8a83d2409ea266ea451f977
   - enabled: 1
+    path: Assets/Scenes/RulesScene.unity
+    guid: 0100ad39f48c7413a8e7d54784c459b8
+  - enabled: 1
     path: Assets/Scenes/LoginScene.unity
     guid: 623cb7cd9be83e84f820608cf84466cd
-  - enabled: 1
-    path: Assets/Scenes/RulesScene(Outdated).unity
-    guid: 0ffbcdd693d99c640975fd0c9c166aaa
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: b21ca71bfd07a7d4fac684396d63a0d4
   - enabled: 1
     path: Assets/Scenes/WinGameScene.unity
     guid: ceff9d1dc2fba8245a307b06599f6dc3
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene.unity
+    guid: 92c1bbc74feb1cb4faff90fee7cd32e3
   m_configObjects: {}

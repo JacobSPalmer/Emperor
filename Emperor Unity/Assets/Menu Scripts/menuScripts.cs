@@ -49,4 +49,9 @@ public class menuScripts : MonoBehaviour
         SceneManager.LoadScene("WinGameScene", LoadSceneMode.Single);
     }
 
+    public void EndGameScreen (string LevelName)
+    {
+        SceneManager.LoadScene("EndGameScene", LoadSceneMode.Single);
+    }
+
 }

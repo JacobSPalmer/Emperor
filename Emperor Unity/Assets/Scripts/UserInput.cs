@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UserInput : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UserInput : MonoBehaviour
     public int foundationPoints;
     private Emperor emperor;
     public GameObject selectedCard;
+    public int movesTaken;
+
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +72,7 @@ public class UserInput : MonoBehaviour
     void Tableau(GameObject newSelected)
     {
         print("Hit Tableau");
-        if(selectedCard.CompareTag("Card") && selectedCard.GetComponent<Selectable>().rank == 13)
+        if(selectedCard.CompareTag("Card") && emperor.bottomPos[newSelected.GetComponent<Selectable>().posRow].transform.childCount == 0)
         {
             Move(newSelected);
         }
@@ -165,6 +168,7 @@ public class UserInput : MonoBehaviour
     }
     void Move(GameObject newSelected)
     {
+        movesTaken += 1;
         Selectable origin = selectedCard.GetComponent<Selectable>();
         Selectable destination = newSelected.GetComponent<Selectable>();
 
@@ -212,18 +216,18 @@ public class UserInput : MonoBehaviour
             emperor.topPos[origin.posRow].GetComponent<Selectable>().suit = origin.suit;
             emperor.topPos[origin.posRow].GetComponent<Selectable>().rank = origin.rank;
             origin.onFoundation = true;
-            // foreach(GameObject foundation in emperor.topPos){
-            //     print(foundation.transform.name + ":" + foundation.transform.childCount);
-            // }
             determineFoundationPoint();
-            // print(isCompleteFoundation());
+            //If foundation is complete, activate win game overlay
+            if(isCompleteFoundation())
+            {
+                SceneManager.LoadScene("EndGameScene", LoadSceneMode.Single);
+            }
         }
         else
         {
             origin.onFoundation = false;
         }
 
-        
         selectedCard = this.gameObject;
     }
 
@@ -271,7 +275,7 @@ public class UserInput : MonoBehaviour
         foreach(GameObject foundation in emperor.topPos)
         {
             int n = foundation.transform.childCount;
-            print(n);
+            // print(n);
             for(int i = 1; i <= n; i++)
             {
                 score += i * 10;
@@ -285,8 +289,10 @@ public class UserInput : MonoBehaviour
         scorePanelObj.text = foundationPoints.ToString();
     }
 
-    void onDisable()
+    void OnDisable()
     {
+        print(movesTaken + " " + foundationPoints);
+        PlayerPrefs.SetInt("moves", movesTaken);
         PlayerPrefs.SetInt("score", foundationPoints);
     }
 }
