@@ -154,7 +154,7 @@ public class UserInput : MonoBehaviour
         //primary game rule for moving in tableau: if the destination card is of a different color and has a rank one higher than the origin card, then return true
         else
         {
-            if(origin.rank == destination.rank - 1 && origin.color != destination.color)
+            if(origin.rank == destination.rank + 1 && origin.color != destination.color)
             {
                     print("Can Stack");
                     return true;

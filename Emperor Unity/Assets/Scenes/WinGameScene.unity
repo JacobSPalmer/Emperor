@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 264093177}
   - component: {fileID: 264093180}
   m_Layer: 0
-  m_Name: EmpererorGame (1)
+  m_Name: EmpererorGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 307194336}
   - component: {fileID: 307194335}
   m_Layer: 0
-  m_Name: EventSystem (1)
+  m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,7 +1263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768573623}
   m_Layer: 0
-  m_Name: Deck (1)
+  m_Name: Deck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1523,7 +1523,7 @@ GameObject:
   - component: {fileID: 899054296}
   - component: {fileID: 899054297}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2944,7 +2944,7 @@ GameObject:
   - component: {fileID: 1541639286}
   - component: {fileID: 1541639285}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3041,7 +3041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605264626}
   m_Layer: 0
-  m_Name: Tableau (1)
+  m_Name: Tableau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3462,7 +3462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756601771}
   m_Layer: 0
-  m_Name: Foundation (1)
+  m_Name: Foundation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4702,7 +4702,7 @@ GameObject:
   - component: {fileID: 2144630103}
   - component: {fileID: 2144630102}
   m_Layer: 0
-  m_Name: GameSFX (1)
+  m_Name: GameSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

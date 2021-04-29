@@ -1415,7 +1415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14017424, y: 0.69082963}
   m_AnchorMax: {x: 0.14017424, y: 0.69082963}
-  m_AnchoredPosition: {x: -0.00000010431, y: 1.73}
+  m_AnchoredPosition: {x: 0, y: 1.73}
   m_SizeDelta: {x: 2.000424, y: 0.63275003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1230370339
@@ -2669,7 +2669,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Cards can be moved in 3 ways:\n\n     1. Moving a card to the foundation
     pile\n\t\n     2. Stacking a card in the layout rows. \n\n\t-ONLY IF the card
-    being moved \n\tis one rank lower and of the opposite color of  \n\tthe card
+    being moved \n\tis one rank higher and of the opposite color \n\tof  the card
     it is being moved to\n\n     3. From the draw pile one at a time into a layout
     \n         pile or a foundation pile\n\nWhen a facedown card is exposed, the
     card can be flipped and used in play.\n\n"
