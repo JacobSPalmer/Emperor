@@ -10,7 +10,7 @@ public class EmperorDB : MonoBehaviour {
     private string cs;
 
     void Start() {
-        cs = "URI=file:" + Application.dataPath + "/emperor.s3db";
+        cs = "URI=file:" + Application.persistentDataPath + "/emperor.s3db";
         print(cs);
         CreateTable();
         // addEntry("Jacob", 200, "00:01:32", 23);
