@@ -36,7 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Menu Scripts\gameReportScript.cs" />
+     <Compile Include="Assets\Database\EmperorDB.cs" />
+     <Compile Include="Assets\Database\User.cs" />
+     <Compile Include="Assets\Database\gameReportScript.cs" />
+     <Compile Include="Assets\Database\leaderboardInterScript.cs" />
      <Compile Include="Assets\Menu Scripts\menuScripts.cs" />
      <Compile Include="Assets\Menu Scripts\rulesTabScript.cs" />
      <Compile Include="Assets\Menu Scripts\usernameScript.cs" />
@@ -249,6 +252,21 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+        <HintPath>C:/Users/Jacob/Documents/GitHub/Emperor/Emperor Unity/Assets/Plugins/sqlite/Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+        <HintPath>C:/Users/Jacob/Documents/GitHub/Emperor/Emperor Unity/Assets/Plugins/sqlite/System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+        <HintPath>C:/Users/Jacob/Documents/GitHub/Emperor/Emperor Unity/Assets/Plugins/sqlite/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+        <HintPath>C:/Users/Jacob/Documents/GitHub/Emperor/Emperor Unity/Assets/Plugins/sqlite/System.EnterpriseServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security">
+        <HintPath>C:/Users/Jacob/Documents/GitHub/Emperor/Emperor Unity/Assets/Plugins/sqlite/System.Security.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

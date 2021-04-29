@@ -56,7 +56,6 @@ public class Emperor : MonoBehaviour
             PlayWinState();
         }
         // PlayWinState();
-
     }
 
     // Update is called once per frame

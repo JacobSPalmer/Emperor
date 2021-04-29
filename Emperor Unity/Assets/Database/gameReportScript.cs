@@ -33,6 +33,13 @@ public class gameReportScript : MonoBehaviour
         TimeText.text = Time;
     }
 
+    public void SaveToLeaderboardClick(){
+        EmperorDB dB = GetComponent<EmperorDB>();
+        dB.addEntry(Player, Score, Time, MovesTaken);
+        GameObject btn = GameObject.Find("SaveToLeaderboard");
+        btn.SetActive(false);
+    }
+
     void OnDisable(){
         PlayerPrefs.DeleteAll();
     }

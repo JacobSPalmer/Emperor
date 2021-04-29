@@ -54,4 +54,14 @@ public class menuScripts : MonoBehaviour
         SceneManager.LoadScene("EndGameScene", LoadSceneMode.Single);
     }
 
+    public void LeaderboardScreen (string LevelName)
+    {
+        SceneManager.LoadScene("LeaderboardScene", LoadSceneMode.Single);
+    }
+
+    public void CreditsScreen (string LevelName)
+    {
+        SceneManager.LoadScene("CreditsScene", LoadSceneMode.Single);
+    }
+
 }

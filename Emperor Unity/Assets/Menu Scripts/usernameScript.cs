@@ -26,6 +26,13 @@ public class usernameScript : MonoBehaviour
 
     void OnDisable()
     {
-        PlayerPrefs.SetString("username", inputText.text);
+        if(string.Equals(inputText.text, "")){
+            int rNum = Random.Range(1, 1000000);
+            string rName = "Player" + rNum.ToString();
+            PlayerPrefs.SetString("username", rName);
+        }
+        else{
+             PlayerPrefs.SetString("username", inputText.text);
+        }
     }
 }
