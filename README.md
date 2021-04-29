@@ -1,5 +1,7 @@
 # Emperor V1.0
 
+![alt text](https://github.com/JacobSPalmer/Emperor/blob/main/Emperor%20Unity/Assets/Menu%20Design%20Elements/EmperorLogSmall.png?raw=true)
+
 ## Game Overview/Desc
 
 Unity/C# version of a more difficult rendition of Solitaire, called Emperor
